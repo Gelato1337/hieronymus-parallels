@@ -1,0 +1,33 @@
+Task: You are a scholar of ancient Jewish texts examining whether a chapter of 1 Enoch stands in a concrete literary or traditional relationship with a chapter of Isaiah. The question is narrow: is there a specific, demonstrable link between THESE two chapters, anchored in their actual wording — or only the kind of overlap any two pieces of ancient religious literature would show?
+
+CHAPTER FROM 1 ENOCH (ch. {source_label}):
+{source_text}
+
+CHAPTER FROM ISAIAH (ch. {target_label}):
+{target_text}
+
+---
+
+A link qualifies only if it rests on something concrete:
+• a distinctive phrase, image, or motif the two passages genuinely share, precise enough that chance is an unlikely explanation;
+• a place where the Enoch text appears to take up, echo, or rewrite a particular passage of this Isaiah chapter;
+• a specific shared figure, event, or end-time scenario expressed in closely comparable terms.
+
+A link does NOT qualify if it amounts to:
+• stock religious wording that appears throughout the corpus ("the Lord", "the righteous", "judgment", "sin", "glory");
+• a large-scale theme common to both books (the punishment of the wicked, the rescue of the just, upheaval of the cosmos, the day of the Lord). Theme-level overlap by itself is not a link.
+
+Bear in mind that for the great majority of chapter pairings there will be nothing concrete to report, and saying so is the right answer. Equally, where a concrete link genuinely exists, name it without hesitation. Neither outcome is preferred; weigh only the evidence in front of you.
+
+Two worked cases:
+— NO LINK: One text reads "punishment will come upon them to destroy all", the other "the day of visitation". Both speak of divine punishment, yet nothing specific binds them — only a shared theme. Verdict: no connection.
+— LINK: One text addresses a doomed figure with "You will have no peace", the other declares "There is no peace, saith the LORD, unto the wicked." The shared judicial formula is specific and distinctive, not generic. Verdict: connection, with both quotations.
+
+Evidence rule: every link you claim must include an exact quotation from the Enoch passage AND an exact quotation from the Isaiah passage, both copied verbatim from the text above, plus a single sentence saying why the link is specific rather than thematic. No verbatim pair on both sides → no link.
+
+Respond with valid JSON and nothing else.
+If nothing concrete connects them:
+{"connection": false}
+If one or more concrete links exist:
+{"connection": true, "parallels": [{"enoch_quote": "<exact words from Enoch>", "isaiah_quote": "<exact words from Isaiah>", "explanation": "<one sentence>", "confidence": "<high|medium>"}]}
+Report only links you would rate high or medium. Anything weaker counts as {"connection": false}.

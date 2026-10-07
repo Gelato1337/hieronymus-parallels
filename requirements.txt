@@ -1,0 +1,3 @@
+pdfplumber
+vllm        # GPU runs
+anthropic   # API runs

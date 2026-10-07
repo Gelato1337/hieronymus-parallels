@@ -1,0 +1,31 @@
+Comparing one chapter of 1 Enoch with one chapter of Isaiah. Your job: decide whether they share a real, specific, textually-grounded connection — not just the generic overlap common to all ancient Jewish religious writing.
+
+1 ENOCH (ch {source_label}):
+{source_text}
+
+ISAIAH (ch {target_label}):
+{target_text}
+
+---
+
+Counts as a connection:
+- a distinctive shared phrase, image, or motif unlikely to be coincidence;
+- Enoch developing, echoing, or reworking a specific passage of this Isaiah chapter;
+- a shared named figure, event, or eschatological scenario in closely comparable terms.
+
+Does NOT count:
+- generic religious words ("the Lord", "judgment", "the righteous", "sin", "glory");
+- broad themes spanning both books (judgment, the fate of the wicked, vindication of the righteous, cosmic upheaval). A shared theme alone is nothing.
+
+For most pairs the honest answer is no connection — say so. When a real anchored parallel exists, say that with equal confidence. Decide on the evidence alone, with no lean toward yes or no.
+
+Example of NOT a connection: "punishment will come upon them to destroy all" / "the day of visitation" — both about punishment, but only thematically.
+Example of a real connection: "You will have no peace" / "There is no peace, saith the LORD, unto the wicked" — a specific shared judicial formula.
+
+Any connection you assert must come with: an exact quote from the Enoch text, an exact quote from the Isaiah text (both copied verbatim from above), and one sentence on why it is specific rather than thematic. Can't quote both sides? Then there is no connection.
+
+Return only valid JSON:
+{"connection": false}
+or
+{"connection": true, "parallels": [{"enoch_quote": "<verbatim>", "isaiah_quote": "<verbatim>", "explanation": "<one sentence>", "confidence": "<high|medium>"}]}
+Only high or medium confidence qualifies; otherwise return {"connection": false}.

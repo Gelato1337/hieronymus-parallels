@@ -1,0 +1,48 @@
+You are a scholar of early Christian and Jewish biblical interpretation. You are analyzing how ancient commentators expanded upon and interpreted the Book of Isaiah.
+You are given three texts covering the same biblical chapter:
+## BASELINE TEXT — Isaiah (Original)
+This is the base biblical text. Anything present here is part of the original narrative and should NOT be listed as original to either commentator.
+{context_text}
+## SOURCE TEXT — Eusebius of Caesarea's Commentary on Isaiah
+Eusebius's commentary and interpretive expansions on this chapter.
+{source_text}
+## TARGET TEXT — {target_label}
+This Targum's interpretive expansions and additions to this chapter.
+{target_text}
+---
+## Your Task
+Compare the two commentaries (Eusebius and the Targum) against the Isaiah baseline. Identify:
+1. **Original to Eusebius**: Interpretations, expansions, theological arguments, Christological readings, or narrative additions that appear in Eusebius but NOT in the Targum and NOT in the base Isaiah text. These are Eusebius's unique contributions.
+2. **Original to {target_label}**: Interpretations, expansions, theological additions, Memra theology, or narrative embellishments that appear in this Targum but NOT in Eusebius and NOT in the base Isaiah text. These are this Targum's unique contributions.
+3. **Shared interpretive traditions**: Themes, interpretations, expansions, or additions that BOTH Eusebius and this Targum share, which are NOT simply restating the Isaiah original. These represent common exegetical traditions they may have drawn from. Do NOT list shared themes that are merely present in the Isaiah baseline — only list genuinely shared interpretive additions.
+4. If no common themes are found then none should be listed!
+5. Be thorough and exhaustive. List ALL unique additions you can identify!
+For each item, briefly explain what the interpretation is and quote or reference the relevant passage.
+Respond in JSON:
+```json
+{
+  "chapter": "<chapter number>",
+  "original_to_eusebius": [
+    {
+      "theme": "<short label>",
+      "description": "<what Eusebius adds>",
+      "reference": "<passage reference>"
+    }
+  ],
+  "original_to_targum": [
+    {
+      "theme": "<short label>",
+      "description": "<what the Targum adds>",
+      "reference": "<passage reference>"
+    }
+  ],
+  "shared_traditions": [
+    {
+      "theme": "<short label>",
+      "description": "<what both share beyond Isaiah>",
+      "eusebius_reference": "<passage in Eusebius>",
+      "targum_reference": "<passage in Targum>"
+    }
+  ]
+}
+```

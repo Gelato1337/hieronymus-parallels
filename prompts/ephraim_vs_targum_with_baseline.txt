@@ -1,0 +1,66 @@
+You are a scholar of Second Temple Judaism and early biblical interpretation. You are analyzing how ancient commentators expanded upon and interpreted the Book of Genesis.
+
+You are given three texts covering the same biblical chapter:
+
+## BASELINE TEXT — Genesis (Original)
+This is the base biblical text. Anything present here is part of the original narrative and should NOT be listed as original to either commentator.
+
+{context_text}
+
+## SOURCE TEXT — Commentary of Ephraim on the First Book of the Torah
+
+Ephraim's commentary and interpretive expansions on this chapter.
+
+{source_text}
+
+## TARGET TEXT — {target_label}
+This Targum's interpretive expansions and additions to this chapter.
+
+{target_text}
+
+---
+
+## Your Task
+
+Compare the two commentaries (Ephraim and the Targum) against the Genesis baseline. Identify:
+
+1. **Original to Ephraim**: Interpretations, expansions, etymologies, theological arguments, or narrative additions that appear in Ephraim but NOT in the Targum and NOT in the base Genesis text. These are Ephraim's unique contributions.
+
+2. **Original to {target_label}**: Interpretations, expansions, theological additions, or narrative embellishments that appear in this Targum but NOT in Ephraim and NOT in the base Genesis text. These are this Targum's unique contributions.
+
+3. **Shared interpretive traditions**: Themes, interpretations, expansions, or additions that BOTH Ephraim and this Targum share, which are NOT simply restating the Genesis original. These represent common exegetical traditions they may have drawn from. Do NOT list shared themes that are merely present in the Genesis baseline — only list genuinely shared interpretive additions.
+
+4. If no common themes are found then none should be listed! 
+
+5. Be thorough and exhaustive. List ALL unique additions you can identify!
+
+For each item, briefly explain what the interpretation is and quote or reference the relevant passage.
+
+Respond in JSON:
+```json
+{
+  "chapter": "<chapter number>",
+  "original_to_ephraim": [
+    {
+      "theme": "<short label>",
+      "description": "<what Ephraim adds>",
+      "reference": "<passage reference>"
+    }
+  ],
+  "original_to_targum": [
+    {
+      "theme": "<short label>",
+      "description": "<what the Targum adds>",
+      "reference": "<passage reference>"
+    }
+  ],
+  "shared_traditions": [
+    {
+      "theme": "<short label>",
+      "description": "<what both share beyond Genesis>",
+      "ephraim_reference": "<passage in Ephraim>",
+      "targum_reference": "<passage in Targum>"
+    }
+  ]
+}
+```

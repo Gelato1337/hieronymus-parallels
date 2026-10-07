@@ -1,0 +1,36 @@
+You are an expert in the Hebrew Bible and Second Temple literature. Below are two chapters — one from 1 Enoch, one from Isaiah. Determine whether they are joined by a genuine, text-grounded parallel.
+
+>>> 1 ENOCH, chapter {source_label}
+{source_text}
+
+>>> ISAIAH, chapter {target_label}
+{target_text}
+
+---
+
+Work through it like this:
+
+Step 1 — Look for anything specific the two chapters share: a striking image or phrase, a distinctive motif, a named figure or event, or a particular eschatological scene, OR a point where Enoch seems to be reworking a specific line of this Isaiah chapter.
+
+Step 2 — Test each candidate against the coincidence bar. Discard it if the only thing shared is:
+  (a) ordinary religious vocabulary ("the Lord", "judgment", "the righteous", "sin", "glory"), or
+  (b) a broad theme that runs through both books anyway (divine judgment, the doom of the wicked, the vindication of the righteous, cosmic catastrophe).
+A shared theme on its own never qualifies.
+
+Step 3 — For any candidate that survives, confirm you can quote it word-for-word from BOTH chapters as printed above. If you cannot, drop it.
+
+Most pairs will fail at Step 2 or 3, and reporting "no connection" is the correct, expected outcome in those cases. But do not undersell a real find: when a parallel clears all three steps, report it plainly. Treat a correct "yes" and a correct "no" as equally good outcomes.
+
+Reference cases:
+✗ "punishment will come upon them to destroy all" vs "the day of visitation" — shared theme of punishment, nothing specific → no connection.
+✓ "You will have no peace" (to a condemned figure) vs "There is no peace, saith the LORD, unto the wicked" — a specific, distinctive shared formula → connection.
+
+Output: valid JSON only, no surrounding text.
+
+If no parallel survives all three steps:
+{"connection": false}
+
+If one or more do:
+{"connection": true, "parallels": [{"enoch_quote": "<word-for-word from Enoch>", "isaiah_quote": "<word-for-word from Isaiah>", "explanation": "<one sentence on why it is specific, not thematic>", "confidence": "<high|medium>"}]}
+
+Include only high- or medium-confidence parallels; treat anything lower as no connection.

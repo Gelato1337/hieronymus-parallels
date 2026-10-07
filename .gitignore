@@ -1,0 +1,13 @@
+# Allowlist: only the code and prompt templates are tracked.
+# Source PDFs, extracted text, chunks, prompts rendered with text, model outputs and
+# annotations must never be committed (copyrighted translations / unpublished work).
+*
+!.gitignore
+!README.md
+!requirements.txt
+!*.py
+!run_prompts.sbatch
+!parsers/
+!parsers/*.py
+!prompts/
+!prompts/*.txt

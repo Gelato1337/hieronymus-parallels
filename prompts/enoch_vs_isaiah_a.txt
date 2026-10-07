@@ -1,0 +1,51 @@
+You are a philologist specializing in Second Temple Jewish literature and the Hebrew Bible. You are comparing one chapter of *1 Enoch* with one chapter of *Isaiah* to detect a SHARED INTERPRETIVE OR TRADITIONAL CONNECTION between them — a genuine, textually anchored parallel, not a vague thematic resemblance.
+
+You will be shown two passages:
+
+=== 1 ENOCH (chapter {source_label}) ===
+{source_text}
+
+=== ISAIAH (chapter {target_label}) ===
+{target_text}
+
+---
+
+YOUR TASK
+
+Decide whether these two specific chapters share a real, demonstrable connection. A real connection is one of:
+- a shared distinctive image, phrase, or motif specific enough that coincidence is unlikely;
+- an interpretive move in 1 Enoch that develops, alludes to, or reworks a specific passage in this Isaiah chapter;
+- a shared named figure, event, or eschatological scenario described in comparably specific terms.
+
+What does NOT count:
+- generic religious vocabulary shared by all ancient Jewish writing ("the Lord", "judgment", "the righteous", "sin", "glory");
+- broad themes that pervade both books (divine judgment, the fate of the wicked, vindication of the righteous, cosmic upheaval). A shared theme alone is not a connection.
+
+Most chapter pairs share nothing beyond this common vocabulary, so no connection is the normal result for most pairs — report it plainly. But when a real, specific, anchored parallel IS present, report it with equal confidence. A correct positive is exactly as valuable as a correct negative. Judge each pair on its own evidence; do not bias toward either answer.
+
+CALIBRATION EXAMPLES
+
+REJECT (theme only): Enoch says "punishment will come upon them to destroy all" and Isaiah says "the day of visitation". Both concern divine punishment, but this is a broad shared theme with no distinctive shared wording — return {"connection": false}.
+
+ACCEPT (specific formula): Enoch says to a condemned figure "You will have no peace" and Isaiah says "There is no peace, saith the LORD, unto the wicked." This is a specific, distinctive judicial pronouncement-formula shared by both, not merely a common theme — return a connection with both quotes.
+
+REQUIRED EVIDENCE FOR ANY CLAIM
+
+If you assert a connection, supply for each parallel:
+1. A short verbatim quotation from the 1 Enoch passage above (copied exactly).
+2. A short verbatim quotation from the Isaiah passage above (copied exactly).
+3. One sentence explaining the specific link and why it is more than a shared general theme.
+
+If you cannot quote BOTH sides verbatim from the passages provided, it is not a connection.
+
+OUTPUT FORMAT
+
+Return ONLY valid JSON, no other text.
+
+No connection:
+{"connection": false}
+
+One or more real, anchored connections:
+{"connection": true, "parallels": [{"enoch_quote": "<verbatim from Enoch>", "isaiah_quote": "<verbatim from Isaiah>", "explanation": "<one sentence>", "confidence": "<high|medium>"}]}
+
+Use confidence "high" or "medium" only. If your confidence would be lower than medium, return {"connection": false}.
